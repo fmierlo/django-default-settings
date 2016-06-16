@@ -1,0 +1,168 @@
+#!/bin/bash
+
+set -e
+
+function usage()
+{
+    echo "usage: ${0} [add|start|update|clean] [all|x.x x.x.x ...]"
+    exit 2
+}
+
+function init()
+{
+    dir="release/${version}"
+    requirements="requirements.txt"
+    secret="01234567890123456789012345678901234567890123456789"
+
+    manage="manage.py"
+    project="project"
+    app="app"
+
+    settings="project/settings.py"
+    defaults="project/defaults.py"
+
+    defaultprefix="default"
+    projectprefix="startproject"
+
+    diffsettings="diff_settings.py"
+    projectsettings="${projectprefix}_settings.py"
+    defaultsettings="${defaultprefix}_settings.py"
+
+    diffdir="diff/${version}"
+    diffdefaultproject="${defaultprefix}_${projectprefix}.diff"
+
+    major="$(echo ${version} | cut -f 1 -d .)"
+    minor="$(echo ${version} | cut -f 2 -d .)"
+
+    if [ "${major}" == "1" ] && [ "${minor}" -le "3" ]
+    then
+        startdst=""
+    else
+        startdst="."
+    fi
+
+    if [ "${major}" == "1" ] && [ "${minor}" -le "5" ]
+    then
+        diffall="diffsettings-all.py"
+    else
+        diffall=""
+    fi
+}
+
+function clean()
+{
+    local basedir="${PWD}"
+
+    cd "${basedir}/${dir}"
+    rm -vrf "${manage}" "${project}" "${app}" \
+        "${settings}" "${defaults}" \
+        "${diffsettings}" "${projectsettings}" "${defaultsettings}" \
+        "${diffall}"
+
+    cd "${basedir}/${diffdir}"
+    rm -vrf "${diffdefaultproject}"
+    rm -vrf "${projectprefix}_"*".diff"
+    rm -vrf "${defaultprefix}_"*".diff"
+
+    cd "${basedir}"
+}
+
+function add()
+{
+    mkdir -v "${dir}" "${diffdir}"
+    echo "echo \"Django==${version}\" > \"${dir}/${requirements}\""
+    echo "Django==${version}" > "${dir}/${requirements}"
+}
+
+function diffclean()
+{
+    sed "s,/.*${dir},.,g" \
+        | sed "s,^### ,,"
+}
+
+function start()
+{
+    local basedir="${PWD}"
+    cd "${dir}"
+
+    pip install -U -r "${requirements}"
+
+    unset DJANGO_SETTINGS_MODULE
+    django-admin.py startproject -v 2 project ${startdst}
+    django-admin.py startapp -v 2 app
+
+    if [ ! -e "${manage}" ]
+    then
+        cp -av "$(command -v django-admin.py)" "${manage}"
+    fi
+
+    if [ "${diffall}" != "" ]
+    then
+        cp -av "${basedir}/${diffall}" "${diffall}"
+        chmod +x "${diffall}"
+    else
+        diffall="${manage}"
+    fi
+
+    sed "s,SECRET_KEY = '.*',SECRET_KEY = '${secret}',g" -i "${settings}"
+    echo "SECRET_KEY = '${secret}'" > "${defaults}"
+
+    export DJANGO_SETTINGS_MODULE=project.settings
+    "${manage}" diffsettings | diffclean > "${diffsettings}"
+    "${diffall}" diffsettings --all | diffclean > "${projectsettings}"
+
+    export DJANGO_SETTINGS_MODULE=project.defaults
+    "${diffall}" diffsettings --all | diffclean > "${defaultsettings}"
+
+    cd "${basedir}"
+}
+
+function update()
+{
+    diff -U 0 "${dir}/${defaultsettings}" "${dir}/${projectsettings}" \
+        > "${diffdir}/${diffdefaultproject}" \
+        || echo "diff: ${diffdir}/${diffdefaultproject}"
+
+    for src_version in ${all_versions}
+    do
+        src_dir="release/${src_version}"
+
+        diff -U 0 "${src_dir}/${defaultsettings}" "${dir}/${defaultsettings}" \
+            > "${diffdir}/${defaultprefix}_${src_version}_${version}.diff" \
+            || echo "diff: ${diffdir}/${defaultprefix}_${src_version}_${version}.diff"
+
+        diff -U 0 "${src_dir}/${projectsettings}" "${dir}/${projectsettings}" \
+            > "${diffdir}/${projectprefix}_${src_version}_${version}.diff" \
+            || echo "diff: ${diffdir}/${projectprefix}_${src_version}_${version}.diff"
+    done
+}
+
+function options()
+{
+    action="${1}"
+    [ "${action}" == "" ] && usage
+
+    shift
+    versions="${@}"
+    all_versions="$(ls release | sort -h)"
+    [ "${versions}" == "" ] && usage
+    [ "${versions}" == "all" ] && versions="${all_versions}"
+    return 0
+}
+
+function main()
+{
+    options ${@}
+    for version in ${versions}
+    do
+        init "${version}"
+
+        case "${action}" in
+            add|start|update|clean)
+                ${action} ;;
+            *) usage ;;
+        esac
+    done
+}
+
+main ${@}
