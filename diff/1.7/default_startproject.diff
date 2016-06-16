@@ -1,0 +1,39 @@
+--- release/1.7/default_settings.py	2016-06-16 01:06:49.464211530 -0300
++++ release/1.7/startproject_settings.py	2016-06-16 01:06:49.304211530 -0300
+@@ -8,0 +9 @@
++BASE_DIR = '.'  ###
+@@ -21 +22 @@
+-DATABASES = {}
++DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3', 'AUTOCOMMIT': True, 'ATOMIC_REQUESTS': False, 'NAME': './db.sqlite3', 'CONN_MAX_AGE': 0, 'TIME_ZONE': 'UTC', 'PORT': '', 'HOST': '', 'USER': '', 'TEST': {'COLLATION': None, 'CHARSET': None, 'NAME': None, 'MIRROR': None}, 'PASSWORD': '', 'OPTIONS': {}}}
+@@ -27 +28 @@
+-DEBUG = False
++DEBUG = True
+@@ -57 +58 @@
+-INSTALLED_APPS = ()
++INSTALLED_APPS = ('django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django.contrib.messages', 'django.contrib.staticfiles')
+@@ -76 +77 @@
+-MIDDLEWARE_CLASSES = ('django.middleware.common.CommonMiddleware', 'django.middleware.csrf.CsrfViewMiddleware')
++MIDDLEWARE_CLASSES = ('django.contrib.sessions.middleware.SessionMiddleware', 'django.middleware.common.CommonMiddleware', 'django.middleware.csrf.CsrfViewMiddleware', 'django.contrib.auth.middleware.AuthenticationMiddleware', 'django.contrib.auth.middleware.SessionAuthenticationMiddleware', 'django.contrib.messages.middleware.MessageMiddleware', 'django.middleware.clickjacking.XFrameOptionsMiddleware')
+@@ -83,0 +85 @@
++ROOT_URLCONF = 'project.urls'  ###
+@@ -100 +102 @@
+-SETTINGS_MODULE = 'project.defaults'  ###
++SETTINGS_MODULE = 'project.settings'  ###
+@@ -109 +111 @@
+-STATIC_URL = None
++STATIC_URL = '/static/'
+@@ -111 +113 @@
+-TEMPLATE_DEBUG = False
++TEMPLATE_DEBUG = True
+@@ -120 +122 @@
+-TIME_ZONE = 'America/Chicago'
++TIME_ZONE = 'UTC'
+@@ -124 +126 @@
+-USE_L10N = False
++USE_L10N = True
+@@ -126 +128 @@
+-USE_TZ = False
++USE_TZ = True
+@@ -128 +130 @@
+-WSGI_APPLICATION = None
++WSGI_APPLICATION = 'project.wsgi.application'

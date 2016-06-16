@@ -1,0 +1,105 @@
+--- release/1.2/default_settings.py	2016-06-16 01:06:21.852211533 -0300
++++ release/1.7/default_settings.py	2016-06-16 01:06:49.464211530 -0300
+@@ -4 +4 @@
+-ADMIN_MEDIA_PREFIX = '/media/'
++ALLOWED_HOSTS = []
+@@ -8,2 +8,3 @@
+-BANNED_IPS = ()
+-CACHE_BACKEND = 'locmem://'
++AUTH_USER_MODEL = 'auth.User'
++CACHES = {'default': {'BACKEND': 'django.core.cache.backends.locmem.LocMemCache'}}
++CACHE_MIDDLEWARE_ALIAS = 'default'
+@@ -13,4 +14 @@
+-COMMENTS_BANNED_USERS_GROUP = None
+-COMMENTS_FIRST_FEW = 0
+-COMMENTS_MODERATORS_GROUP = None
+-COMMENTS_SKETCHY_USERS_GROUP = None
++CSRF_COOKIE_AGE = 31449600
+@@ -17,0 +16 @@
++CSRF_COOKIE_HTTPONLY = False
+@@ -18,0 +18,2 @@
++CSRF_COOKIE_PATH = '/'
++CSRF_COOKIE_SECURE = False
+@@ -21,6 +21,0 @@
+-DATABASE_ENGINE = ''
+-DATABASE_HOST = ''
+-DATABASE_NAME = ''
+-DATABASE_OPTIONS = {}
+-DATABASE_PASSWORD = ''
+-DATABASE_PORT = ''
+@@ -28 +22,0 @@
+-DATABASE_USER = ''
+@@ -30 +24 @@
+-DATETIME_INPUT_FORMATS = ('%Y-%m-%d %H:%M:%S', '%Y-%m-%d %H:%M', '%Y-%m-%d', '%m/%d/%Y %H:%M:%S', '%m/%d/%Y %H:%M', '%m/%d/%Y', '%m/%d/%y %H:%M:%S', '%m/%d/%y %H:%M', '%m/%d/%y')
++DATETIME_INPUT_FORMATS = ('%Y-%m-%d %H:%M:%S', '%Y-%m-%d %H:%M:%S.%f', '%Y-%m-%d %H:%M', '%Y-%m-%d', '%m/%d/%Y %H:%M:%S', '%m/%d/%Y %H:%M:%S.%f', '%m/%d/%Y %H:%M', '%m/%d/%Y', '%m/%d/%y %H:%M:%S', '%m/%d/%y %H:%M:%S.%f', '%m/%d/%y %H:%M', '%m/%d/%y')
+@@ -37,0 +32 @@
++DEFAULT_EXCEPTION_REPORTER_FILTER = 'django.views.debug.SafeExceptionReporterFilter'
+@@ -48,0 +44 @@
++EMAIL_USE_SSL = False
+@@ -50,0 +47 @@
++FILE_UPLOAD_DIRECTORY_PERMISSIONS = None
+@@ -59,3 +56,2 @@
+-IGNORABLE_404_ENDS = ('mail.pl', 'mailform.pl', 'mail.cgi', 'mailform.cgi', 'favicon.ico', '.php')
+-IGNORABLE_404_STARTS = ('/cgi-bin/', '/_vti_bin', '/_vti_inf')
+-INSTALLED_APPS = []
++IGNORABLE_404_URLS = ()
++INSTALLED_APPS = ()
+@@ -63,2 +59,2 @@
+-LANGUAGES = (('ar', 'Arabic'), ('bg', 'Bulgarian'), ('bn', 'Bengali'), ('bs', 'Bosnian'), ('ca', 'Catalan'), ('cs', 'Czech'), ('cy', 'Welsh'), ('da', 'Danish'), ('de', 'German'), ('el', 'Greek'), ('en', 'English'), ('en-gb', 'British English'), ('es', 'Spanish'), ('es-ar', 'Argentinean Spanish'), ('et', 'Estonian'), ('eu', 'Basque'), ('fa', 'Persian'), ('fi', 'Finnish'), ('fr', 'French'), ('fy-nl', 'Frisian'), ('ga', 'Irish'), ('gl', 'Galician'), ('he', 'Hebrew'), ('hi', 'Hindi'), ('hr', 'Croatian'), ('hu', 'Hungarian'), ('id', 'Indonesian'), ('is', 'Icelandic'), ('it', 'Italian'), ('ja', 'Japanese'), ('ka', 'Georgian'), ('km', 'Khmer'), ('kn', 'Kannada'), ('ko', 'Korean'), ('lt', 'Lithuanian'), ('lv', 'Latvian'), ('mk', 'Macedonian'), ('mn', 'Mongolian'), ('nl', 'Dutch'), ('no', 'Norwegian'), ('nb', 'Norwegian Bokmal'), ('nn', 'Norwegian Nynorsk'), ('pl', 'Polish'), ('pt', 'Portuguese'), ('pt-br', 'Brazilian Portuguese'), ('ro', 'Romanian'), ('ru', 'Russian'), ('sk', 'Slovak'), ('sl', 'Slovenian'), ('sq', 'Albanian'), ('sr', 'Serbian'), ('sr-latn', 'Serbian Latin'), ('sv', 'Swedish'), ('ta', 'Tamil'), ('te', 'Telugu'), ('th', 'Thai'), ('tr', 'Turkish'), ('uk', 'Ukrainian'), ('vi', 'Vietnamese'), ('zh-cn', 'Simplified Chinese'), ('zh-tw', 'Traditional Chinese'))
+-LANGUAGES_BIDI = ('he', 'ar', 'fa')
++LANGUAGES = (('af', 'Afrikaans'), ('ar', 'Arabic'), ('ast', 'Asturian'), ('az', 'Azerbaijani'), ('bg', 'Bulgarian'), ('be', 'Belarusian'), ('bn', 'Bengali'), ('br', 'Breton'), ('bs', 'Bosnian'), ('ca', 'Catalan'), ('cs', 'Czech'), ('cy', 'Welsh'), ('da', 'Danish'), ('de', 'German'), ('el', 'Greek'), ('en', 'English'), ('en-au', 'Australian English'), ('en-gb', 'British English'), ('eo', 'Esperanto'), ('es', 'Spanish'), ('es-ar', 'Argentinian Spanish'), ('es-mx', 'Mexican Spanish'), ('es-ni', 'Nicaraguan Spanish'), ('es-ve', 'Venezuelan Spanish'), ('et', 'Estonian'), ('eu', 'Basque'), ('fa', 'Persian'), ('fi', 'Finnish'), ('fr', 'French'), ('fy', 'Frisian'), ('ga', 'Irish'), ('gl', 'Galician'), ('he', 'Hebrew'), ('hi', 'Hindi'), ('hr', 'Croatian'), ('hu', 'Hungarian'), ('ia', 'Interlingua'), ('id', 'Indonesian'), ('io', 'Ido'), ('is', 'Icelandic'), ('it', 'Italian'), ('ja', 'Japanese'), ('ka', 'Georgian'), ('kk', 'Kazakh'), ('km', 'Khmer'), ('kn', 'Kannada'), ('ko', 'Korean'), ('lb', 'Luxembourgish'), ('lt', 'Lithuanian'), ('lv', 'Latvian'), ('mk', 'Macedonian'), ('ml', 'Malayalam'), ('mn', 'Mongolian'), ('mr', 'Marathi'), ('my', 'Burmese'), ('nb', 'Norwegian Bokmal'), ('ne', 'Nepali'), ('nl', 'Dutch'), ('nn', 'Norwegian Nynorsk'), ('os', 'Ossetic'), ('pa', 'Punjabi'), ('pl', 'Polish'), ('pt', 'Portuguese'), ('pt-br', 'Brazilian Portuguese'), ('ro', 'Romanian'), ('ru', 'Russian'), ('sk', 'Slovak'), ('sl', 'Slovenian'), ('sq', 'Albanian'), ('sr', 'Serbian'), ('sr-latn', 'Serbian Latin'), ('sv', 'Swedish'), ('sw', 'Swahili'), ('ta', 'Tamil'), ('te', 'Telugu'), ('th', 'Thai'), ('tr', 'Turkish'), ('tt', 'Tatar'), ('udm', 'Udmurt'), ('uk', 'Ukrainian'), ('ur', 'Urdu'), ('vi', 'Vietnamese'), ('zh-cn', 'Simplified Chinese'), ('zh-hans', 'Simplified Chinese'), ('zh-hant', 'Traditional Chinese'), ('zh-tw', 'Traditional Chinese'))
++LANGUAGES_BIDI = ('he', 'ar', 'fa', 'ur')
+@@ -65,0 +62,2 @@
++LANGUAGE_COOKIE_AGE = None
++LANGUAGE_COOKIE_DOMAIN = None
+@@ -66,0 +65 @@
++LANGUAGE_COOKIE_PATH = '/'
+@@ -67,0 +67,2 @@
++LOGGING = {}
++LOGGING_CONFIG = 'logging.config.dictConfig'
+@@ -74,2 +75,3 @@
+-MESSAGE_STORAGE = 'django.contrib.messages.storage.user_messages.LegacyFallbackStorage'
+-MIDDLEWARE_CLASSES = ('django.middleware.common.CommonMiddleware', 'django.contrib.sessions.middleware.SessionMiddleware', 'django.middleware.csrf.CsrfViewMiddleware', 'django.contrib.auth.middleware.AuthenticationMiddleware', 'django.contrib.messages.middleware.MessageMiddleware')
++MESSAGE_STORAGE = 'django.contrib.messages.storage.fallback.FallbackStorage'
++MIDDLEWARE_CLASSES = ('django.middleware.common.CommonMiddleware', 'django.middleware.csrf.CsrfViewMiddleware')
++MIGRATION_MODULES = {}
+@@ -77,0 +80 @@
++PASSWORD_HASHERS = ('django.contrib.auth.hashers.PBKDF2PasswordHasher', 'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher', 'django.contrib.auth.hashers.BCryptSHA256PasswordHasher', 'django.contrib.auth.hashers.BCryptPasswordHasher', 'django.contrib.auth.hashers.SHA1PasswordHasher', 'django.contrib.auth.hashers.MD5PasswordHasher', 'django.contrib.auth.hashers.UnsaltedSHA1PasswordHasher', 'django.contrib.auth.hashers.UnsaltedMD5PasswordHasher', 'django.contrib.auth.hashers.CryptPasswordHasher')
+@@ -80 +83 @@
+-PROFANITIES_LIST = ('asshat', 'asshead', 'asshole', 'cunt', 'fuck', 'gook', 'nigger', 'shit')
++PROFANITIES_LIST = ()
+@@ -81,0 +85 @@
++SECURE_PROXY_SSL_HEADER = None
+@@ -83,0 +88 @@
++SESSION_CACHE_ALIAS = 'default'
+@@ -85,0 +91 @@
++SESSION_COOKIE_HTTPONLY = True
+@@ -92,0 +99 @@
++SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
+@@ -96 +103,8 @@
+-TEMPLATE_CONTEXT_PROCESSORS = ('django.contrib.auth.context_processors.auth', 'django.core.context_processors.debug', 'django.core.context_processors.i18n', 'django.core.context_processors.media', 'django.contrib.messages.context_processors.messages')
++SIGNING_BACKEND = 'django.core.signing.TimestampSigner'
++SILENCED_SYSTEM_CHECKS = []
++STATICFILES_DIRS = ()
++STATICFILES_FINDERS = ('django.contrib.staticfiles.finders.FileSystemFinder', 'django.contrib.staticfiles.finders.AppDirectoriesFinder')
++STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
++STATIC_ROOT = None
++STATIC_URL = None
++TEMPLATE_CONTEXT_PROCESSORS = ('django.contrib.auth.context_processors.auth', 'django.core.context_processors.debug', 'django.core.context_processors.i18n', 'django.core.context_processors.media', 'django.core.context_processors.static', 'django.core.context_processors.tz', 'django.contrib.messages.context_processors.messages')
+@@ -101,4 +115,2 @@
+-TEST_DATABASE_CHARSET = None
+-TEST_DATABASE_COLLATION = None
+-TEST_DATABASE_NAME = None
+-TEST_RUNNER = 'django.test.simple.DjangoTestSuiteRunner'
++TEST_NON_SERIALIZED_APPS = []
++TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+@@ -107 +119 @@
+-TIME_INPUT_FORMATS = ('%H:%M:%S', '%H:%M')
++TIME_INPUT_FORMATS = ('%H:%M:%S', '%H:%M:%S.%f', '%H:%M')
+@@ -110 +121,0 @@
+-URL_VALIDATOR_USER_AGENT = 'Django/1.2 (http://www.djangoproject.com)'
+@@ -114,0 +126,4 @@
++USE_TZ = False
++USE_X_FORWARDED_HOST = False
++WSGI_APPLICATION = None
++X_FRAME_OPTIONS = 'SAMEORIGIN'

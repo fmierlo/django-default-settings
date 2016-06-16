@@ -1,0 +1,29 @@
+--- release/1.8/default_settings.py	2016-06-16 01:06:55.692211529 -0300
++++ release/1.7/default_settings.py	2016-06-16 01:06:49.464211530 -0300
+@@ -2,0 +3 @@
++ADMIN_FOR = ()
+@@ -11,0 +13 @@
++COMMENTS_ALLOW_PROFANITIES = False
+@@ -41,2 +42,0 @@
+-EMAIL_SSL_CERTFILE = None
+-EMAIL_SSL_KEYFILE = None
+@@ -44 +43,0 @@
+-EMAIL_TIMEOUT = None
+@@ -83,0 +83 @@
++PROFANITIES_LIST = ()
+@@ -85,4 +84,0 @@
+-SECURE_BROWSER_XSS_FILTER = False
+-SECURE_CONTENT_TYPE_NOSNIFF = False
+-SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+-SECURE_HSTS_SECONDS = 0
+@@ -90,3 +86 @@
+-SECURE_REDIRECT_EXEMPT = []
+-SECURE_SSL_HOST = None
+-SECURE_SSL_REDIRECT = False
++SEND_BROKEN_LINK_EMAILS = False
+@@ -116,2 +110 @@
+-TEMPLATES = []
+-TEMPLATE_CONTEXT_PROCESSORS = ('django.contrib.auth.context_processors.auth', 'django.template.context_processors.debug', 'django.template.context_processors.i18n', 'django.template.context_processors.media', 'django.template.context_processors.static', 'django.template.context_processors.tz', 'django.contrib.messages.context_processors.messages')
++TEMPLATE_CONTEXT_PROCESSORS = ('django.contrib.auth.context_processors.auth', 'django.core.context_processors.debug', 'django.core.context_processors.i18n', 'django.core.context_processors.media', 'django.core.context_processors.static', 'django.core.context_processors.tz', 'django.contrib.messages.context_processors.messages')
+@@ -127,0 +121 @@
++TRANSACTIONS_MANAGED = False
