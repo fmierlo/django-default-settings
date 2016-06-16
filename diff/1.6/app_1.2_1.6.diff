@@ -1,0 +1,40 @@
+diff -Nr -U 0 release/1.2/app/admin.py release/1.6/app/admin.py
+--- release/1.2/app/admin.py	1969-12-31 21:00:00.000000000 -0300
++++ release/1.6/app/admin.py	2016-06-16 03:36:26.844210459 -0300
+@@ -0,0 +1,3 @@
++from django.contrib import admin
++
++# Register your models here.
+diff -Nr -U 0 release/1.2/app/tests.py release/1.6/app/tests.py
+--- release/1.2/app/tests.py	2016-06-16 03:36:26.844210459 -0300
++++ release/1.6/app/tests.py	2016-06-16 03:36:26.844210459 -0300
+@@ -1,7 +0,0 @@
+-"""
+-This file demonstrates two different styles of tests (one doctest and one
+-unittest). These will both pass when you run "manage.py test".
+-
+-Replace these with more appropriate tests for your application.
+-"""
+-
+@@ -10,14 +3 @@
+-class SimpleTest(TestCase):
+-    def test_basic_addition(self):
+-        """
+-        Tests that 1 + 1 always equals 2.
+-        """
+-        self.failUnlessEqual(1 + 1, 2)
+-
+-__test__ = {"doctest": """
+-Another way to test that 1 + 1 is equal to 2.
+-
+->>> 1 + 1 == 2
+-True
+-"""}
+-
++# Create your tests here.
+diff -Nr -U 0 release/1.2/app/views.py release/1.6/app/views.py
+--- release/1.2/app/views.py	2016-06-16 03:36:26.844210459 -0300
++++ release/1.6/app/views.py	2016-06-16 03:36:26.844210459 -0300
+@@ -0,0 +1,2 @@
++from django.shortcuts import render
++

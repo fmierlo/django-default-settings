@@ -1,0 +1,24 @@
+diff -Nr -U 0 release/1.1.3/app/tests.py release/1.3/app/tests.py
+--- release/1.1.3/app/tests.py	2016-06-16 03:36:26.840210459 -0300
++++ release/1.3/app/tests.py	2016-06-16 03:36:26.844210459 -0300
+@@ -2,2 +2,2 @@
+-This file demonstrates two different styles of tests (one doctest and one
+-unittest). These will both pass when you run "manage.py test".
++This file demonstrates writing tests using the unittest module. These will pass
++when you run "manage.py test".
+@@ -5 +5 @@
+-Replace these with more appropriate tests for your application.
++Replace this with more appropriate tests for your application.
+@@ -9,0 +10 @@
++
+@@ -15,9 +16 @@
+-        self.failUnlessEqual(1 + 1, 2)
+-
+-__test__ = {"doctest": """
+-Another way to test that 1 + 1 is equal to 2.
+-
+->>> 1 + 1 == 2
+-True
+-"""}
+-
++        self.assertEqual(1 + 1, 2)

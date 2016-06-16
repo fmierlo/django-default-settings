@@ -1,0 +1,44 @@
+diff -Nr -U 0 release/1.5/project/settings.py release/1.4/project/settings.py
+--- release/1.5/project/settings.py	2016-06-16 03:36:26.844210459 -0300
++++ release/1.4/project/settings.py	2016-06-16 03:36:26.844210459 -0300
+@@ -16,5 +16,4 @@
+-        # The following settings are not used with sqlite3:
+-        'USER': '',
+-        'PASSWORD': '',
+-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+-        'PORT': '',                      # Set to empty string for default.
++        'USER': '',                      # Not used with sqlite3.
++        'PASSWORD': '',                  # Not used with sqlite3.
++        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
++        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+@@ -24,4 +22,0 @@
+-# Hosts/domain names that are valid for this site; required if DEBUG is False
+-# See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
+-ALLOWED_HOSTS = []
+-
+@@ -31 +26,4 @@
+-# In a Windows environment this must be set to your system time zone.
++# On Unix systems, a value of None will cause Django to use the same
++# timezone as the operating system.
++# If running in a Windows environment this must be set to the same as your
++# system time zone.
+@@ -52 +50 @@
+-# Example: "/var/www/example.com/media/"
++# Example: "/home/media/media.lawrence.com/media/"
+@@ -57 +55 @@
+-# Examples: "http://example.com/media/", "http://media.example.com/"
++# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
+@@ -63 +61 @@
+-# Example: "/var/www/example.com/static/"
++# Example: "/home/media/media.lawrence.com/static/"
+@@ -67 +65 @@
+-# Example: "http://example.com/static/", "http://static.example.com/"
++# Example: "http://media.lawrence.com/static/"
+diff -Nr -U 0 release/1.5/project/wsgi.py release/1.4/project/wsgi.py
+--- release/1.5/project/wsgi.py	2016-06-16 03:36:26.844210459 -0300
++++ release/1.4/project/wsgi.py	2016-06-16 03:36:26.844210459 -0300
+@@ -18,4 +17,0 @@
+-# We defer to a DJANGO_SETTINGS_MODULE already in the environment. This breaks
+-# if running multiple sites in the same mod_wsgi process. To fix this, use
+-# mod_wsgi daemon mode with each site in its own daemon process, or use
+-# os.environ["DJANGO_SETTINGS_MODULE"] = "project.settings"

@@ -1,0 +1,36 @@
+diff -Nr -U 0 release/1.6/project/settings.py release/1.7/project/settings.py
+--- release/1.6/project/settings.py	2016-06-16 03:36:26.844210459 -0300
++++ release/1.7/project/settings.py	2016-06-16 03:36:26.844210459 -0300
+@@ -5 +5 @@
+-https://docs.djangoproject.com/en/1.6/topics/settings/
++https://docs.djangoproject.com/en/1.7/topics/settings/
+@@ -8 +8 @@
+-https://docs.djangoproject.com/en/1.6/ref/settings/
++https://docs.djangoproject.com/en/1.7/ref/settings/
+@@ -17 +17 @@
+-# See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
++# See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
+@@ -45,0 +46 @@
++    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+@@ -56 +57 @@
+-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
++# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+@@ -66 +67 @@
+-# https://docs.djangoproject.com/en/1.6/topics/i18n/
++# https://docs.djangoproject.com/en/1.7/topics/i18n/
+@@ -80 +81 @@
+-# https://docs.djangoproject.com/en/1.6/howto/static-files/
++# https://docs.djangoproject.com/en/1.7/howto/static-files/
+diff -Nr -U 0 release/1.6/project/urls.py release/1.7/project/urls.py
+--- release/1.6/project/urls.py	2016-06-16 03:36:26.844210459 -0300
++++ release/1.7/project/urls.py	2016-06-16 03:36:26.844210459 -0300
+@@ -2 +1,0 @@
+-
+@@ -4 +2,0 @@
+-admin.autodiscover()
+diff -Nr -U 0 release/1.6/project/wsgi.py release/1.7/project/wsgi.py
+--- release/1.6/project/wsgi.py	2016-06-16 03:36:26.844210459 -0300
++++ release/1.7/project/wsgi.py	2016-06-16 03:36:26.844210459 -0300
+@@ -7 +7 @@
+-https://docs.djangoproject.com/en/1.6/howto/deployment/wsgi/
++https://docs.djangoproject.com/en/1.7/howto/deployment/wsgi/

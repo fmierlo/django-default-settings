@@ -1,0 +1,38 @@
+diff -Nr -U 0 release/1.1.3/project/settings.py release/1.2/project/settings.py
+--- release/1.1.3/project/settings.py	2016-06-16 03:36:26.840210459 -0300
++++ release/1.2/project/settings.py	2016-06-16 03:36:26.844210459 -0300
+@@ -12,6 +12,10 @@
+-DATABASE_ENGINE = ''           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+-DATABASE_NAME = ''             # Or path to database file if using sqlite3.
+-DATABASE_USER = ''             # Not used with sqlite3.
+-DATABASE_PASSWORD = ''         # Not used with sqlite3.
+-DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
+-DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
++DATABASES = {
++    'default': {
++        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
++        'NAME': '',                      # Or path to database file if using sqlite3.
++        'USER': '',                      # Not used with sqlite3.
++        'PASSWORD': '',                  # Not used with sqlite3.
++        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
++        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
++    }
++}
+@@ -37,0 +42,4 @@
++# If you set this to False, Django will not format dates, numbers and
++# calendars according to the current locale
++USE_L10N = True
++
+@@ -57,3 +65,3 @@
+-    'django.template.loaders.filesystem.load_template_source',
+-    'django.template.loaders.app_directories.load_template_source',
+-#     'django.template.loaders.eggs.load_template_source',
++    'django.template.loaders.filesystem.Loader',
++    'django.template.loaders.app_directories.Loader',
++#     'django.template.loaders.eggs.Loader',
+@@ -64,0 +73 @@
++    'django.middleware.csrf.CsrfViewMiddleware',
+@@ -65,0 +75 @@
++    'django.contrib.messages.middleware.MessageMiddleware',
+@@ -80,0 +91 @@
++    'django.contrib.messages',

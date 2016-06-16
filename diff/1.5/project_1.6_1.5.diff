@@ -1,0 +1,258 @@
+diff -Nr -U 0 release/1.6/project/settings.py release/1.5/project/settings.py
+--- release/1.6/project/settings.py	2016-06-16 03:36:26.844210459 -0300
++++ release/1.5/project/settings.py	2016-06-16 03:36:26.844210459 -0300
+@@ -1,2 +1 @@
+-"""
+-Django settings for project project.
++# Django settings for project project.
+@@ -4,2 +3,6 @@
+-For more information on this file, see
+-https://docs.djangoproject.com/en/1.6/topics/settings/
++DEBUG = True
++TEMPLATE_DEBUG = DEBUG
++
++ADMINS = (
++    # ('Your Name', 'your_email@example.com'),
++)
+@@ -7,3 +10 @@
+-For the full list of settings and their values, see
+-https://docs.djangoproject.com/en/1.6/ref/settings/
+-"""
++MANAGERS = ADMINS
+@@ -11,3 +12,11 @@
+-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+-import os
+-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
++DATABASES = {
++    'default': {
++        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
++        'NAME': '',                      # Or path to database file if using sqlite3.
++        # The following settings are not used with sqlite3:
++        'USER': '',
++        'PASSWORD': '',
++        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
++        'PORT': '',                      # Set to empty string for default.
++    }
++}
+@@ -14,0 +24,3 @@
++# Hosts/domain names that are valid for this site; required if DEBUG is False
++# See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
++ALLOWED_HOSTS = []
+@@ -16,2 +28,5 @@
+-# Quick-start development settings - unsuitable for production
+-# See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
++# Local time zone for this installation. Choices can be found here:
++# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
++# although not all choices may be available on all operating systems.
++# In a Windows environment this must be set to your system time zone.
++TIME_ZONE = 'America/Chicago'
+@@ -19,2 +34,3 @@
+-# SECURITY WARNING: keep the secret key used in production secret!
+-SECRET_KEY = '01234567890123456789012345678901234567890123456789'
++# Language code for this installation. All choices can be found here:
++# http://www.i18nguy.com/unicode/language-identifiers.html
++LANGUAGE_CODE = 'en-us'
+@@ -22,2 +38 @@
+-# SECURITY WARNING: don't run with debug turned on in production!
+-DEBUG = True
++SITE_ID = 1
+@@ -25 +40,3 @@
+-TEMPLATE_DEBUG = True
++# If you set this to False, Django will make some optimizations so as not
++# to load the internationalization machinery.
++USE_I18N = True
+@@ -27 +44,3 @@
+-ALLOWED_HOSTS = []
++# If you set this to False, Django will not format dates, numbers and
++# calendars according to the current locale.
++USE_L10N = True
+@@ -28,0 +48,2 @@
++# If you set this to False, Django will not use timezone-aware datetimes.
++USE_TZ = True
+@@ -30 +51,14 @@
+-# Application definition
++# Absolute filesystem path to the directory that will hold user-uploaded files.
++# Example: "/var/www/example.com/media/"
++MEDIA_ROOT = ''
++
++# URL that handles the media served from MEDIA_ROOT. Make sure to use a
++# trailing slash.
++# Examples: "http://example.com/media/", "http://media.example.com/"
++MEDIA_URL = ''
++
++# Absolute path to the directory static files should be collected to.
++# Don't put anything in this directory yourself; store your static files
++# in apps' "static/" subdirectories and in STATICFILES_DIRS.
++# Example: "/var/www/example.com/static/"
++STATIC_ROOT = ''
+@@ -32,7 +66,27 @@
+-INSTALLED_APPS = (
+-    'django.contrib.admin',
+-    'django.contrib.auth',
+-    'django.contrib.contenttypes',
+-    'django.contrib.sessions',
+-    'django.contrib.messages',
+-    'django.contrib.staticfiles',
++# URL prefix for static files.
++# Example: "http://example.com/static/", "http://static.example.com/"
++STATIC_URL = '/static/'
++
++# Additional locations of static files
++STATICFILES_DIRS = (
++    # Put strings here, like "/home/html/static" or "C:/www/django/static".
++    # Always use forward slashes, even on Windows.
++    # Don't forget to use absolute paths, not relative paths.
++)
++
++# List of finder classes that know how to find static files in
++# various locations.
++STATICFILES_FINDERS = (
++    'django.contrib.staticfiles.finders.FileSystemFinder',
++    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
++#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
++)
++
++# Make this unique, and don't share it with anybody.
++SECRET_KEY = '01234567890123456789012345678901234567890123456789'
++
++# List of callables that know how to import templates from various sources.
++TEMPLATE_LOADERS = (
++    'django.template.loaders.filesystem.Loader',
++    'django.template.loaders.app_directories.Loader',
++#     'django.template.loaders.eggs.Loader',
+@@ -42 +95,0 @@
+-    'django.contrib.sessions.middleware.SessionMiddleware',
+@@ -43,0 +97 @@
++    'django.contrib.sessions.middleware.SessionMiddleware',
+@@ -47 +101,2 @@
+-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
++    # Uncomment the next line for simple clickjacking protection:
++    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+@@ -51,0 +107 @@
++# Python dotted path to the WSGI application used by Django's runserver.
+@@ -53,0 +110,5 @@
++TEMPLATE_DIRS = (
++    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
++    # Always use forward slashes, even on Windows.
++    # Don't forget to use absolute paths, not relative paths.
++)
+@@ -55,2 +116,12 @@
+-# Database
+-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
++INSTALLED_APPS = (
++    'django.contrib.auth',
++    'django.contrib.contenttypes',
++    'django.contrib.sessions',
++    'django.contrib.sites',
++    'django.contrib.messages',
++    'django.contrib.staticfiles',
++    # Uncomment the next line to enable the admin:
++    # 'django.contrib.admin',
++    # Uncomment the next line to enable admin documentation:
++    # 'django.contrib.admindocs',
++)
+@@ -58,4 +129,26 @@
+-DATABASES = {
+-    'default': {
+-        'ENGINE': 'django.db.backends.sqlite3',
+-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
++# A sample logging configuration. The only tangible logging
++# performed by this configuration is to send an email to
++# the site admins on every HTTP 500 error when DEBUG=False.
++# See http://docs.djangoproject.com/en/dev/topics/logging for
++# more details on how to customize your logging configuration.
++LOGGING = {
++    'version': 1,
++    'disable_existing_loggers': False,
++    'filters': {
++        'require_debug_false': {
++            '()': 'django.utils.log.RequireDebugFalse'
++        }
++    },
++    'handlers': {
++        'mail_admins': {
++            'level': 'ERROR',
++            'filters': ['require_debug_false'],
++            'class': 'django.utils.log.AdminEmailHandler'
++        }
++    },
++    'loggers': {
++        'django.request': {
++            'handlers': ['mail_admins'],
++            'level': 'ERROR',
++            'propagate': True,
++        },
+@@ -64,19 +156,0 @@
+-
+-# Internationalization
+-# https://docs.djangoproject.com/en/1.6/topics/i18n/
+-
+-LANGUAGE_CODE = 'en-us'
+-
+-TIME_ZONE = 'UTC'
+-
+-USE_I18N = True
+-
+-USE_L10N = True
+-
+-USE_TZ = True
+-
+-
+-# Static files (CSS, JavaScript, Images)
+-# https://docs.djangoproject.com/en/1.6/howto/static-files/
+-
+-STATIC_URL = '/static/'
+diff -Nr -U 0 release/1.6/project/urls.py release/1.5/project/urls.py
+--- release/1.6/project/urls.py	2016-06-16 03:36:26.844210459 -0300
++++ release/1.5/project/urls.py	2016-06-16 03:36:26.844210459 -0300
+@@ -3,2 +3,3 @@
+-from django.contrib import admin
+-admin.autodiscover()
++# Uncomment the next two lines to enable the admin:
++# from django.contrib import admin
++# admin.autodiscover()
+@@ -9 +10 @@
+-    # url(r'^blog/', include('blog.urls')),
++    # url(r'^project/', include('project.foo.urls')),
+@@ -11 +12,5 @@
+-    url(r'^admin/', include(admin.site.urls)),
++    # Uncomment the admin/doc line below to enable admin documentation:
++    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
++
++    # Uncomment the next line to enable the admin:
++    # url(r'^admin/', include(admin.site.urls)),
+diff -Nr -U 0 release/1.6/project/wsgi.py release/1.5/project/wsgi.py
+--- release/1.6/project/wsgi.py	2016-06-16 03:36:26.844210459 -0300
++++ release/1.5/project/wsgi.py	2016-06-16 03:36:26.844210459 -0300
+@@ -4 +4,4 @@
+-It exposes the WSGI callable as a module-level variable named ``application``.
++This module contains the WSGI application used by Django's development server
++and any production WSGI deployments. It should expose a module-level variable
++named ``application``. Django's ``runserver`` and ``runfcgi`` commands discover
++this application via the ``WSGI_APPLICATION`` setting.
+@@ -6,3 +9,5 @@
+-For more information on this file, see
+-https://docs.djangoproject.com/en/1.6/howto/deployment/wsgi/
+-"""
++Usually you will have the standard Django WSGI application here, but it also
++might make sense to replace the whole Django WSGI application with a custom one
++that later delegates to the Django one. For example, you could introduce WSGI
++middleware here, or combine a Django application with an application of another
++framework.
+@@ -9,0 +15 @@
++"""
+@@ -10,0 +17,5 @@
++
++# We defer to a DJANGO_SETTINGS_MODULE already in the environment. This breaks
++# if running multiple sites in the same mod_wsgi process. To fix this, use
++# mod_wsgi daemon mode with each site in its own daemon process, or use
++# os.environ["DJANGO_SETTINGS_MODULE"] = "project.settings"
+@@ -12,0 +24,3 @@
++# This application object is used by any WSGI server configured to use this
++# file. This includes Django's development server, if the WSGI_APPLICATION
++# setting points here.
+@@ -14,0 +29,4 @@
++
++# Apply WSGI middleware here.
++# from helloworld.wsgi import HelloWorldApplication
++# application = HelloWorldApplication(application)
