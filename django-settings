@@ -4,7 +4,7 @@ set -e
 
 function usage()
 {
-    echo "usage: ${0} [add|start|update|clean] [all|x.x x.x.x ...]"
+    echo "usage: ${0} [add|start|update|cleanstart|cleandiff|cleandocs] [all|x.x x.x.x ...]"
     exit 2
 }
 
@@ -52,7 +52,7 @@ function init()
     fi
 }
 
-function clean()
+function cleanstart()
 {
     local basedir="${PWD}"
 
@@ -62,12 +62,23 @@ function clean()
         "${diffsettings}" "${projectsettings}" "${defaultsettings}" \
         "${diffall}"
 
+    cd "${basedir}"
+}
+
+function cleandiff()
+{
+    local basedir="${PWD}"
+
     cd "${basedir}/${diffdir}"
     rm -vrf "${diffdefaultproject}"
     rm -vrf "${projectprefix}_"*".diff"
     rm -vrf "${defaultprefix}_"*".diff"
 
     cd "${basedir}"
+}
+
+function cleandocs()
+{
     rm -vrf "${docindex}"
 }
 
@@ -173,7 +184,7 @@ function main()
         init "${version}"
 
         case "${action}" in
-            add|start|update|clean)
+            add|start|update|cleanstart|cleandiff|cleandocs)
                 ${action} ;;
             *) usage ;;
         esac
