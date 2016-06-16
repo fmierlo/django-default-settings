@@ -1,0 +1,36 @@
+--- release/1.5/default_settings.py	2016-06-16 01:06:36.724211531 -0300
++++ release/1.5/startproject_settings.py	2016-06-16 01:06:36.572211531 -0300
+@@ -19 +19 @@
+-DATABASES = {}
++DATABASES = {'default': {'ENGINE': 'django.db.backends.', 'NAME': '', 'HOST': '', 'USER': '', 'PASSWORD': '', 'PORT': ''}}
+@@ -25 +25 @@
+-DEBUG = False
++DEBUG = True
+@@ -53 +53 @@
+-INSTALLED_APPS = ()
++INSTALLED_APPS = ('django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django.contrib.sites', 'django.contrib.messages', 'django.contrib.staticfiles')
+@@ -60 +60 @@
+-LOGGING = {}
++LOGGING = {'loggers': {'django.request': {'level': 'ERROR', 'propagate': True, 'handlers': ['mail_admins']}}, 'version': 1, 'filters': {'require_debug_false': {'()': 'django.utils.log.RequireDebugFalse'}}, 'disable_existing_loggers': False, 'handlers': {'mail_admins': {'class': 'django.utils.log.AdminEmailHandler', 'filters': ['require_debug_false'], 'level': 'ERROR'}}}
+@@ -75,0 +76 @@
++ROOT_URLCONF = 'project.urls'  ###
+@@ -91 +92 @@
+-SETTINGS_MODULE = 'project.defaults'  ###
++SETTINGS_MODULE = 'project.settings'  ###
+@@ -94,0 +96 @@
++SITE_ID = 1  ###
+@@ -99 +101 @@
+-STATIC_URL = None
++STATIC_URL = '/static/'
+@@ -101 +103 @@
+-TEMPLATE_DEBUG = False
++TEMPLATE_DEBUG = True
+@@ -113 +115 @@
+-USE_L10N = False
++USE_L10N = True
+@@ -115 +117 @@
+-USE_TZ = False
++USE_TZ = True
+@@ -117 +119 @@
+-WSGI_APPLICATION = None
++WSGI_APPLICATION = 'project.wsgi.application'
