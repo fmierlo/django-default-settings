@@ -1,4 +1,4 @@
-# Django 1.9 #
+# Django 1.4 #
 
 | startproject | default |
 | --- | --- |
