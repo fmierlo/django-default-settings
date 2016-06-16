@@ -1,0 +1,33 @@
+--- release/1.4/default_settings.py	2016-06-16 01:06:30.748211532 -0300
++++ release/1.4/startproject_settings.py	2016-06-16 01:06:30.644211532 -0300
+@@ -17 +17 @@
+-DATABASES = {'default': {'ENGINE': 'django.db.backends.dummy'}}
++DATABASES = {'default': {'ENGINE': 'django.db.backends.', 'NAME': '', 'HOST': '', 'USER': '', 'PASSWORD': '', 'PORT': ''}}
+@@ -23 +23 @@
+-DEBUG = False
++DEBUG = True
+@@ -51 +51 @@
+-INSTALLED_APPS = ()
++INSTALLED_APPS = ('django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django.contrib.sites', 'django.contrib.messages', 'django.contrib.staticfiles')
+@@ -73,0 +74 @@
++ROOT_URLCONF = 'project.urls'  ###
+@@ -88 +89 @@
+-SETTINGS_MODULE = 'project.defaults'  ###
++SETTINGS_MODULE = 'project.settings'  ###
+@@ -91,0 +93 @@
++SITE_ID = 1  ###
+@@ -96 +98 @@
+-STATIC_URL = None
++STATIC_URL = '/static/'
+@@ -98 +100 @@
+-TEMPLATE_DEBUG = False
++TEMPLATE_DEBUG = True
+@@ -111 +113 @@
+-USE_L10N = False
++USE_L10N = True
+@@ -113 +115 @@
+-USE_TZ = False
++USE_TZ = True
+@@ -115 +117 @@
+-WSGI_APPLICATION = None
++WSGI_APPLICATION = 'project.wsgi.application'
