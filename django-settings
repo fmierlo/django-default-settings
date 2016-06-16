@@ -29,7 +29,10 @@ function init()
     defaultsettings="${defaultprefix}_settings.py"
 
     diffdir="diff/${version}"
+    docindex="docs/${version}.md"
+
     diffdefaultproject="${defaultprefix}_${projectprefix}.diff"
+    diffurl="https://github.com/fmierlo/django-default-settings/blob/master"
 
     major="$(echo ${version} | cut -f 1 -d .)"
     minor="$(echo ${version} | cut -f 2 -d .)"
@@ -65,6 +68,7 @@ function clean()
     rm -vrf "${defaultprefix}_"*".diff"
 
     cd "${basedir}"
+    rm -vrf "${docindex}"
 }
 
 function add()
@@ -123,18 +127,29 @@ function update()
         > "${diffdir}/${diffdefaultproject}" \
         || echo "diff: ${diffdir}/${diffdefaultproject}"
 
+    echo "# Django 1.9 #" > "${docindex}"
+    echo >> "${docindex}"
+    echo "| startproject | default |" >> "${docindex}"
+    echo "| --- | --- |" >> "${docindex}"
+
     for src_version in ${all_versions}
     do
         src_dir="release/${src_version}"
 
+        defaultdifffile="${diffdir}/${defaultprefix}_${src_version}_${version}.diff"
+        projectdifffile="${diffdir}/${projectprefix}_${src_version}_${version}.diff"
+
         diff -U 0 "${src_dir}/${defaultsettings}" "${dir}/${defaultsettings}" \
-            > "${diffdir}/${defaultprefix}_${src_version}_${version}.diff" \
-            || echo "diff: ${diffdir}/${defaultprefix}_${src_version}_${version}.diff"
+            > "${defaultdifffile}" \
+            || echo "diff: ${defaultdifffile}"
 
         diff -U 0 "${src_dir}/${projectsettings}" "${dir}/${projectsettings}" \
-            > "${diffdir}/${projectprefix}_${src_version}_${version}.diff" \
-            || echo "diff: ${diffdir}/${projectprefix}_${src_version}_${version}.diff"
+            > "${projectdifffile}" \
+            || echo "diff: ${projectdifffile}"
+
+        echo "| [${src_version}](${diffurl}/${projectdifffile}) | [${src_version}](${diffurl}/${defaultdifffile}) |" >> "${docindex}"
     done
+    echo "build: ${docindex}"
 }
 
 function options()
