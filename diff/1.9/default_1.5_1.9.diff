@@ -1,0 +1,117 @@
+--- release/1.5/default_settings.py	2016-06-16 01:06:36.724211531 -0300
++++ release/1.9/default_settings.py	2016-06-16 01:07:01.144211528 -0300
+@@ -2,2 +2 @@
+-ADMINS = ()
+-ADMIN_FOR = ()
++ADMINS = []
+@@ -5 +4 @@
+-ALLOWED_INCLUDE_ROOTS = ()
++ALLOWED_INCLUDE_ROOTS = []
+@@ -7 +6,2 @@
+-AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',)
++AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']
++AUTH_PASSWORD_VALIDATORS = []
+@@ -13 +13 @@
+-COMMENTS_ALLOW_PROFANITIES = False
++CSRF_COOKIE_AGE = 31449600
+@@ -14,0 +15 @@
++CSRF_COOKIE_HTTPONLY = False
+@@ -18,0 +20,2 @@
++CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
++CSRF_TRUSTED_ORIGINS = []
+@@ -22 +25 @@
+-DATETIME_INPUT_FORMATS = ('%Y-%m-%d %H:%M:%S', '%Y-%m-%d %H:%M:%S.%f', '%Y-%m-%d %H:%M', '%Y-%m-%d', '%m/%d/%Y %H:%M:%S', '%m/%d/%Y %H:%M:%S.%f', '%m/%d/%Y %H:%M', '%m/%d/%Y', '%m/%d/%y %H:%M:%S', '%m/%d/%y %H:%M:%S.%f', '%m/%d/%y %H:%M', '%m/%d/%y')
++DATETIME_INPUT_FORMATS = ['%Y-%m-%d %H:%M:%S', '%Y-%m-%d %H:%M:%S.%f', '%Y-%m-%d %H:%M', '%Y-%m-%d', '%m/%d/%Y %H:%M:%S', '%m/%d/%Y %H:%M:%S.%f', '%m/%d/%Y %H:%M', '%m/%d/%Y', '%m/%d/%y %H:%M:%S', '%m/%d/%y %H:%M:%S.%f', '%m/%d/%y %H:%M', '%m/%d/%y']
+@@ -24 +27 @@
+-DATE_INPUT_FORMATS = ('%Y-%m-%d', '%m/%d/%Y', '%m/%d/%y', '%b %d %Y', '%b %d, %Y', '%d %b %Y', '%d %b, %Y', '%B %d %Y', '%B %d, %Y', '%d %B %Y', '%d %B, %Y')
++DATE_INPUT_FORMATS = ['%Y-%m-%d', '%m/%d/%Y', '%m/%d/%y', '%b %d %Y', '%b %d, %Y', '%d %b %Y', '%d %b, %Y', '%B %d %Y', '%B %d, %Y', '%d %B %Y', '%d %B, %Y']
+@@ -35 +38 @@
+-DISALLOWED_USER_AGENTS = ()
++DISALLOWED_USER_AGENTS = []
+@@ -40,0 +44,2 @@
++EMAIL_SSL_CERTFILE = None
++EMAIL_SSL_KEYFILE = None
+@@ -41,0 +47,2 @@
++EMAIL_TIMEOUT = None
++EMAIL_USE_SSL = False
+@@ -44 +51,2 @@
+-FILE_UPLOAD_HANDLERS = ('django.core.files.uploadhandler.MemoryFileUploadHandler', 'django.core.files.uploadhandler.TemporaryFileUploadHandler')
++FILE_UPLOAD_DIRECTORY_PERMISSIONS = None
++FILE_UPLOAD_HANDLERS = ['django.core.files.uploadhandler.MemoryFileUploadHandler', 'django.core.files.uploadhandler.TemporaryFileUploadHandler']
+@@ -49 +57 @@
+-FIXTURE_DIRS = ()
++FIXTURE_DIRS = []
+@@ -52,5 +60,5 @@
+-IGNORABLE_404_URLS = ()
+-INSTALLED_APPS = ()
+-INTERNAL_IPS = ()
+-LANGUAGES = (('af', 'Afrikaans'), ('ar', 'Arabic'), ('az', 'Azerbaijani'), ('bg', 'Bulgarian'), ('be', 'Belarusian'), ('bn', 'Bengali'), ('br', 'Breton'), ('bs', 'Bosnian'), ('ca', 'Catalan'), ('cs', 'Czech'), ('cy', 'Welsh'), ('da', 'Danish'), ('de', 'German'), ('el', 'Greek'), ('en', 'English'), ('en-gb', 'British English'), ('eo', 'Esperanto'), ('es', 'Spanish'), ('es-ar', 'Argentinian Spanish'), ('es-mx', 'Mexican Spanish'), ('es-ni', 'Nicaraguan Spanish'), ('es-ve', 'Venezuelan Spanish'), ('et', 'Estonian'), ('eu', 'Basque'), ('fa', 'Persian'), ('fi', 'Finnish'), ('fr', 'French'), ('fy-nl', 'Frisian'), ('ga', 'Irish'), ('gl', 'Galician'), ('he', 'Hebrew'), ('hi', 'Hindi'), ('hr', 'Croatian'), ('hu', 'Hungarian'), ('ia', 'Interlingua'), ('id', 'Indonesian'), ('is', 'Icelandic'), ('it', 'Italian'), ('ja', 'Japanese'), ('ka', 'Georgian'), ('kk', 'Kazakh'), ('km', 'Khmer'), ('kn', 'Kannada'), ('ko', 'Korean'), ('lb', 'Luxembourgish'), ('lt', 'Lithuanian'), ('lv', 'Latvian'), ('mk', 'Macedonian'), ('ml', 'Malayalam'), ('mn', 'Mongolian'), ('nb', 'Norwegian Bokmal'), ('ne', 'Nepali'), ('nl', 'Dutch'), ('nn', 'Norwegian Nynorsk'), ('pa', 'Punjabi'), ('pl', 'Polish'), ('pt', 'Portuguese'), ('pt-br', 'Brazilian Portuguese'), ('ro', 'Romanian'), ('ru', 'Russian'), ('sk', 'Slovak'), ('sl', 'Slovenian'), ('sq', 'Albanian'), ('sr', 'Serbian'), ('sr-latn', 'Serbian Latin'), ('sv', 'Swedish'), ('sw', 'Swahili'), ('ta', 'Tamil'), ('te', 'Telugu'), ('th', 'Thai'), ('tr', 'Turkish'), ('tt', 'Tatar'), ('udm', 'Udmurt'), ('uk', 'Ukrainian'), ('ur', 'Urdu'), ('vi', 'Vietnamese'), ('zh-cn', 'Simplified Chinese'), ('zh-tw', 'Traditional Chinese'))
+-LANGUAGES_BIDI = ('he', 'ar', 'fa')
++IGNORABLE_404_URLS = []
++INSTALLED_APPS = []
++INTERNAL_IPS = []
++LANGUAGES = [('af', 'Afrikaans'), ('ar', 'Arabic'), ('ast', 'Asturian'), ('az', 'Azerbaijani'), ('bg', 'Bulgarian'), ('be', 'Belarusian'), ('bn', 'Bengali'), ('br', 'Breton'), ('bs', 'Bosnian'), ('ca', 'Catalan'), ('cs', 'Czech'), ('cy', 'Welsh'), ('da', 'Danish'), ('de', 'German'), ('el', 'Greek'), ('en', 'English'), ('en-au', 'Australian English'), ('en-gb', 'British English'), ('eo', 'Esperanto'), ('es', 'Spanish'), ('es-ar', 'Argentinian Spanish'), ('es-co', 'Colombian Spanish'), ('es-mx', 'Mexican Spanish'), ('es-ni', 'Nicaraguan Spanish'), ('es-ve', 'Venezuelan Spanish'), ('et', 'Estonian'), ('eu', 'Basque'), ('fa', 'Persian'), ('fi', 'Finnish'), ('fr', 'French'), ('fy', 'Frisian'), ('ga', 'Irish'), ('gd', 'Scottish Gaelic'), ('gl', 'Galician'), ('he', 'Hebrew'), ('hi', 'Hindi'), ('hr', 'Croatian'), ('hu', 'Hungarian'), ('ia', 'Interlingua'), ('id', 'Indonesian'), ('io', 'Ido'), ('is', 'Icelandic'), ('it', 'Italian'), ('ja', 'Japanese'), ('ka', 'Georgian'), ('kk', 'Kazakh'), ('km', 'Khmer'), ('kn', 'Kannada'), ('ko', 'Korean'), ('lb', 'Luxembourgish'), ('lt', 'Lithuanian'), ('lv', 'Latvian'), ('mk', 'Macedonian'), ('ml', 'Malayalam'), ('mn', 'Mongolian'), ('mr', 'Marathi'), ('my', 'Burmese'), ('nb', 'Norwegian Bokmal'), ('ne', 'Nepali'), ('nl', 'Dutch'), ('nn', 'Norwegian Nynorsk'), ('os', 'Ossetic'), ('pa', 'Punjabi'), ('pl', 'Polish'), ('pt', 'Portuguese'), ('pt-br', 'Brazilian Portuguese'), ('ro', 'Romanian'), ('ru', 'Russian'), ('sk', 'Slovak'), ('sl', 'Slovenian'), ('sq', 'Albanian'), ('sr', 'Serbian'), ('sr-latn', 'Serbian Latin'), ('sv', 'Swedish'), ('sw', 'Swahili'), ('ta', 'Tamil'), ('te', 'Telugu'), ('th', 'Thai'), ('tr', 'Turkish'), ('tt', 'Tatar'), ('udm', 'Udmurt'), ('uk', 'Ukrainian'), ('ur', 'Urdu'), ('vi', 'Vietnamese'), ('zh-hans', 'Simplified Chinese'), ('zh-hant', 'Traditional Chinese')]
++LANGUAGES_BIDI = ['he', 'ar', 'fa', 'ur']
+@@ -57,0 +66,2 @@
++LANGUAGE_COOKIE_AGE = None
++LANGUAGE_COOKIE_DOMAIN = None
+@@ -59 +69,2 @@
+-LOCALE_PATHS = ()
++LANGUAGE_COOKIE_PATH = '/'
++LOCALE_PATHS = []
+@@ -61 +72 @@
+-LOGGING_CONFIG = 'django.utils.log.dictConfig'
++LOGGING_CONFIG = 'logging.config.dictConfig'
+@@ -65 +76 @@
+-MANAGERS = ()
++MANAGERS = []
+@@ -69 +80,2 @@
+-MIDDLEWARE_CLASSES = ('django.middleware.common.CommonMiddleware', 'django.contrib.sessions.middleware.SessionMiddleware', 'django.middleware.csrf.CsrfViewMiddleware', 'django.contrib.auth.middleware.AuthenticationMiddleware', 'django.contrib.messages.middleware.MessageMiddleware')
++MIDDLEWARE_CLASSES = ['django.middleware.common.CommonMiddleware', 'django.middleware.csrf.CsrfViewMiddleware']
++MIGRATION_MODULES = {}
+@@ -72 +84 @@
+-PASSWORD_HASHERS = ('django.contrib.auth.hashers.PBKDF2PasswordHasher', 'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher', 'django.contrib.auth.hashers.BCryptPasswordHasher', 'django.contrib.auth.hashers.SHA1PasswordHasher', 'django.contrib.auth.hashers.MD5PasswordHasher', 'django.contrib.auth.hashers.UnsaltedSHA1PasswordHasher', 'django.contrib.auth.hashers.UnsaltedMD5PasswordHasher', 'django.contrib.auth.hashers.CryptPasswordHasher')
++PASSWORD_HASHERS = ['django.contrib.auth.hashers.PBKDF2PasswordHasher', 'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher', 'django.contrib.auth.hashers.BCryptSHA256PasswordHasher', 'django.contrib.auth.hashers.BCryptPasswordHasher', 'django.contrib.auth.hashers.SHA1PasswordHasher', 'django.contrib.auth.hashers.MD5PasswordHasher', 'django.contrib.auth.hashers.UnsaltedSHA1PasswordHasher', 'django.contrib.auth.hashers.UnsaltedMD5PasswordHasher', 'django.contrib.auth.hashers.CryptPasswordHasher']
+@@ -75 +86,0 @@
+-PROFANITIES_LIST = ()
+@@ -76,0 +88,4 @@
++SECURE_BROWSER_XSS_FILTER = False
++SECURE_CONTENT_TYPE_NOSNIFF = False
++SECURE_HSTS_INCLUDE_SUBDOMAINS = False
++SECURE_HSTS_SECONDS = 0
+@@ -78 +93,3 @@
+-SEND_BROKEN_LINK_EMAILS = False
++SECURE_REDIRECT_EXEMPT = []
++SECURE_SSL_HOST = None
++SECURE_SSL_REDIRECT = False
+@@ -90,0 +108 @@
++SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
+@@ -95,2 +113,3 @@
+-STATICFILES_DIRS = ()
+-STATICFILES_FINDERS = ('django.contrib.staticfiles.finders.FileSystemFinder', 'django.contrib.staticfiles.finders.AppDirectoriesFinder')
++SILENCED_SYSTEM_CHECKS = []
++STATICFILES_DIRS = []
++STATICFILES_FINDERS = ['django.contrib.staticfiles.finders.FileSystemFinder', 'django.contrib.staticfiles.finders.AppDirectoriesFinder']
+@@ -98 +117 @@
+-STATIC_ROOT = ''
++STATIC_ROOT = None
+@@ -100 +119,2 @@
+-TEMPLATE_CONTEXT_PROCESSORS = ('django.contrib.auth.context_processors.auth', 'django.core.context_processors.debug', 'django.core.context_processors.i18n', 'django.core.context_processors.media', 'django.core.context_processors.static', 'django.core.context_processors.tz', 'django.contrib.messages.context_processors.messages')
++TEMPLATES = []
++TEMPLATE_CONTEXT_PROCESSORS = ['django.contrib.auth.context_processors.auth', 'django.template.context_processors.debug', 'django.template.context_processors.i18n', 'django.template.context_processors.media', 'django.template.context_processors.static', 'django.template.context_processors.tz', 'django.contrib.messages.context_processors.messages']
+@@ -102,2 +122,2 @@
+-TEMPLATE_DIRS = ()
+-TEMPLATE_LOADERS = ('django.template.loaders.filesystem.Loader', 'django.template.loaders.app_directories.Loader')
++TEMPLATE_DIRS = []
++TEMPLATE_LOADERS = ['django.template.loaders.filesystem.Loader', 'django.template.loaders.app_directories.Loader']
+@@ -105 +125,2 @@
+-TEST_RUNNER = 'django.test.simple.DjangoTestSuiteRunner'
++TEST_NON_SERIALIZED_APPS = []
++TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+@@ -108 +129 @@
+-TIME_INPUT_FORMATS = ('%H:%M:%S', '%H:%M')
++TIME_INPUT_FORMATS = ['%H:%M:%S', '%H:%M:%S.%f', '%H:%M']
+@@ -110 +130,0 @@
+-TRANSACTIONS_MANAGED = False
+@@ -116,0 +137 @@
++USE_X_FORWARDED_PORT = False
