@@ -151,6 +151,8 @@ function update()
     echo >> "${docindex}"
     echo "## Differences ##">> "${docindex}"
     echo >> "${docindex}"
+    echo "-   [default x startproject settings](${diffurl}/${diffdir}/${diffdefaultproject})"  >> "${docindex}"
+    echo >> "${docindex}"
     echo "| startproject | default | app dir | project dir |" >> "${docindex}"
     echo "| --- | --- | --- | --- |" >> "${docindex}"
 
