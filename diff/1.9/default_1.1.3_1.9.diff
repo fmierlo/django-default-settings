@@ -1,5 +1,5 @@
 --- release/1.1.3/default_settings.py	2016-06-16 01:06:19.376211533 -0300
-+++ release/1.9/default_settings.py	2016-06-16 01:07:01.144211528 -0300
++++ release/1.9/default_settings.py	2016-06-16 03:10:46.280210642 -0300
 @@ -2,4 +2,3 @@
 -ADMINS = ()
 -ADMIN_FOR = ()
