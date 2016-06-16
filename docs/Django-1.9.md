@@ -1,5 +1,14 @@
 # Django 1.9 #
 
+## Source ##
+
+-   [startproject](https://github.com/fmierlo/django-default-settings/blob/master/release/1.9/startproject_settings.py)
+-   [default](https://github.com/fmierlo/django-default-settings/blob/master/release/1.9/default_settings.py)
+-   [app dir](https://github.com/fmierlo/django-default-settings/blob/master/release/1.9/app)
+-   [project dir](https://github.com/fmierlo/django-default-settings/blob/master/release/1.9/project)
+
+## Differences ##
+
 | startproject | default | app dir | project dir |
 | --- | --- | --- | --- |
 | [1.8](https://github.com/fmierlo/django-default-settings/blob/master/diff/1.9/startproject_1.8_1.9.diff) | [1.8](https://github.com/fmierlo/django-default-settings/blob/master/diff/1.9/default_1.8_1.9.diff) | [1.8](https://github.com/fmierlo/django-default-settings/blob/master/diff/1.9/app_1.8_1.9.diff) | [1.8](https://github.com/fmierlo/django-default-settings/blob/master/diff/1.9/project_1.8_1.9.diff) |
