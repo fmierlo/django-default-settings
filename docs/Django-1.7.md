@@ -2,10 +2,12 @@
 
 ## Source ##
 
--   [startproject](https://github.com/fmierlo/django-default-settings/blob/master/release/1.7/startproject_settings.py)
--   [default](https://github.com/fmierlo/django-default-settings/blob/master/release/1.7/default_settings.py)
--   [app dir](https://github.com/fmierlo/django-default-settings/blob/master/release/1.7/app)
--   [project dir](https://github.com/fmierlo/django-default-settings/blob/master/release/1.7/project)
+-   [root dir](https://github.com/fmierlo/django-default-settings/blob/master/release/1.7)
+    -   [diffsettings](https://github.com/fmierlo/django-default-settings/blob/master/release/1.7/diff_settings.py)
+    -   [startproject](https://github.com/fmierlo/django-default-settings/blob/master/release/1.7/startproject_settings.py)
+    -   [default](https://github.com/fmierlo/django-default-settings/blob/master/release/1.7/default_settings.py)
+    -   [app dir](https://github.com/fmierlo/django-default-settings/blob/master/release/1.7/app)
+    -   [project dir](https://github.com/fmierlo/django-default-settings/blob/master/release/1.7/project)
 
 ## Differences ##
 
