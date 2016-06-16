@@ -1,0 +1,15 @@
+diff -Nr -U 0 release/1.8/app/apps.py release/1.9/app/apps.py
+--- release/1.8/app/apps.py	1969-12-31 21:00:00.000000000 -0300
++++ release/1.9/app/apps.py	2016-06-16 03:36:26.844210459 -0300
+@@ -0,0 +1,5 @@
++from django.apps import AppConfig
++
++
++class AppConfig(AppConfig):
++    name = 'app'
+diff -Nr -U 0 release/1.8/app/models.py release/1.9/app/models.py
+--- release/1.8/app/models.py	2016-06-16 03:36:26.844210459 -0300
++++ release/1.9/app/models.py	2016-06-16 03:36:26.844210459 -0300
+@@ -0,0 +1,2 @@
++from __future__ import unicode_literals
++
