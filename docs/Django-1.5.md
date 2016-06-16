@@ -11,6 +11,8 @@
 
 ## Differences ##
 
+-   [default x startproject settings](https://github.com/fmierlo/django-default-settings/blob/master/diff/1.5/default_startproject.diff)
+
 | startproject | default | app dir | project dir |
 | --- | --- | --- | --- |
 | [1.9](https://github.com/fmierlo/django-default-settings/blob/master/diff/1.5/startproject_1.9_1.5.diff) | [1.9](https://github.com/fmierlo/django-default-settings/blob/master/diff/1.5/default_1.9_1.5.diff) | [1.9](https://github.com/fmierlo/django-default-settings/blob/master/diff/1.5/app_1.9_1.5.diff) | [1.9](https://github.com/fmierlo/django-default-settings/blob/master/diff/1.5/project_1.9_1.5.diff) |
