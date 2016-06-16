@@ -1,5 +1,5 @@
---- release/1.9/startproject_settings.py	2016-06-16 01:07:00.988211528 -0300
-+++ release/1.5/startproject_settings.py	2016-06-16 01:06:36.572211531 -0300
+--- release/1.9/startproject_settings.py	2016-06-16 03:36:26.844210459 -0300
++++ release/1.5/startproject_settings.py	2016-06-16 03:36:26.844210459 -0300
 @@ -2 +2,2 @@
 -ADMINS = []
 +ADMINS = ()

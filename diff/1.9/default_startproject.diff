@@ -1,5 +1,5 @@
---- release/1.9/default_settings.py	2016-06-16 03:10:46.280210642 -0300
-+++ release/1.9/startproject_settings.py	2016-06-16 03:10:46.124210642 -0300
+--- release/1.9/default_settings.py	2016-06-16 03:36:26.844210459 -0300
++++ release/1.9/startproject_settings.py	2016-06-16 03:36:26.844210459 -0300
 @@ -7 +7 @@
 -AUTH_PASSWORD_VALIDATORS = []
 +AUTH_PASSWORD_VALIDATORS = [{'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'}, {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'}, {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'}, {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'}]

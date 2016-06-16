@@ -1,5 +1,5 @@
---- release/1.7/startproject_settings.py	2016-06-16 01:06:49.304211530 -0300
-+++ release/1.6/startproject_settings.py	2016-06-16 01:06:42.664211531 -0300
+--- release/1.7/startproject_settings.py	2016-06-16 03:36:26.844210459 -0300
++++ release/1.6/startproject_settings.py	2016-06-16 03:36:26.844210459 -0300
 @@ -15 +14,0 @@
 -CSRF_COOKIE_AGE = 31449600
 @@ -22 +21 @@

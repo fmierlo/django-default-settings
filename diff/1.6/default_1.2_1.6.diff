@@ -1,5 +1,5 @@
---- release/1.2/default_settings.py	2016-06-16 01:06:21.852211533 -0300
-+++ release/1.6/default_settings.py	2016-06-16 01:06:42.816211531 -0300
+--- release/1.2/default_settings.py	2016-06-16 03:36:26.844210459 -0300
++++ release/1.6/default_settings.py	2016-06-16 03:36:26.844210459 -0300
 @@ -4 +4 @@
 -ADMIN_MEDIA_PREFIX = '/media/'
 +ALLOWED_HOSTS = []

@@ -1,5 +1,5 @@
---- release/1.7/startproject_settings.py	2016-06-16 01:06:49.304211530 -0300
-+++ release/1.3/startproject_settings.py	2016-06-16 01:06:25.308211533 -0300
+--- release/1.7/startproject_settings.py	2016-06-16 03:36:26.844210459 -0300
++++ release/1.3/startproject_settings.py	2016-06-16 03:36:26.844210459 -0300
 @@ -4 +4 @@
 -ALLOWED_HOSTS = []
 +ADMIN_MEDIA_PREFIX = '/static/admin/'
