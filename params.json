@@ -1,5 +1,5 @@
 {
-  "name": "Django-default-settings",
+  "name": "django-default-settings",
   "tagline": "Historical differences between Django's default settings.",
   "body": "# django-default-settings\r\nHistorical differences between Django's default settings.\r\n",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
