@@ -146,6 +146,7 @@ function update()
     for src_version in ${all_versions}
     do
         src_dir="release/${src_version}"
+        [ "${version}" == "${src_version}" ] && continue
 
         defaultdifffile="${diffdir}/${defaultprefix}_${src_version}_${version}.diff"
         projectdifffile="${diffdir}/${projectprefix}_${src_version}_${version}.diff"
@@ -170,7 +171,7 @@ function options()
 
     shift
     versions="${@}"
-    all_versions="$(ls release | sort -h)"
+    all_versions="$(ls release | sort -rh)"
     [ "${versions}" == "" ] && usage
     [ "${versions}" == "all" ] && versions="${all_versions}"
     return 0
