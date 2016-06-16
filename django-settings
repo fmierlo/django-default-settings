@@ -140,8 +140,8 @@ function update()
 
     echo "# Django ${version} #" > "${docindex}"
     echo >> "${docindex}"
-    echo "| startproject | default |" >> "${docindex}"
-    echo "| --- | --- |" >> "${docindex}"
+    echo "| startproject | default | app dir | project dir |" >> "${docindex}"
+    echo "| --- | --- | --- | --- |" >> "${docindex}"
 
     for src_version in ${all_versions}
     do
@@ -159,7 +159,22 @@ function update()
             > "${projectdifffile}" \
             || echo "diff: ${projectdifffile}"
 
-        echo "| [${src_version}](${diffurl}/${projectdifffile}) | [${src_version}](${diffurl}/${defaultdifffile}) |" >> "${docindex}"
+        appdirdifffile="${diffdir}/${app}_${src_version}_${version}.diff"
+        projectdirdifffile="${diffdir}/${project}_${src_version}_${version}.diff"
+
+        diff -Nr -U 0 "${src_dir}/${project}" "${dir}/${project}" \
+            > "${projectdirdifffile}" \
+            || echo "diff: ${projectdirdifffile}"
+
+        diff -Nr -U 0 "${src_dir}/${app}" "${dir}/${app}" \
+            > "${appdirdifffile}" \
+            || echo "diff: ${appdirdifffile}"
+
+        echo -n "| [${src_version}](${diffurl}/${projectdifffile}) " >> "${docindex}"
+        echo -n "| [${src_version}](${diffurl}/${defaultdifffile}) " >> "${docindex}"
+        echo -n "| [${src_version}](${diffurl}/${appdirdifffile}) " >> "${docindex}"
+        echo -n "| [${src_version}](${diffurl}/${projectdirdifffile}) " >> "${docindex}"
+        echo "|" >> "${docindex}"
     done
     echo "build: ${docindex}"
 }
