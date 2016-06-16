@@ -138,7 +138,7 @@ function update()
         > "${diffdir}/${diffdefaultproject}" \
         || echo "diff: ${diffdir}/${diffdefaultproject}"
 
-    echo "# Django 1.9 #" > "${docindex}"
+    echo "# Django ${version} #" > "${docindex}"
     echo >> "${docindex}"
     echo "| startproject | default |" >> "${docindex}"
     echo "| --- | --- |" >> "${docindex}"
