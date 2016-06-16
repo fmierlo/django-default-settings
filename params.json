@@ -1,6 +1,6 @@
 {
   "name": "django-default-settings",
   "tagline": "Historical differences between Django's default settings.",
-  "body": "# django-default-settings #\r\n\r\nHistorical differences between Django's default settings.\r\n\r\n## Index ##\r\n\r\n-   [Django 1.9](https://github.com/fmierlo/django-default-settings/blob/master/docs/1.9.md)\r\n",
+  "body": "# django-default-settings #\r\n\r\nHistorical differences between Django's default settings.\r\n\r\n## Index ##\r\n\r\n-   [Django 1.9](https://github.com/fmierlo/django-default-settings/blob/master/docs/Django-1.9.md)\r\n-   [Django 1.8](https://github.com/fmierlo/django-default-settings/blob/master/docs/Django-1.8.md)\r\n-   [Django 1.7](https://github.com/fmierlo/django-default-settings/blob/master/docs/Django-1.7.md)\r\n-   [Django 1.6](https://github.com/fmierlo/django-default-settings/blob/master/docs/Django-1.6.md)\r\n-   [Django 1.5](https://github.com/fmierlo/django-default-settings/blob/master/docs/Django-1.5.md)\r\n-   [Django 1.4](https://github.com/fmierlo/django-default-settings/blob/master/docs/Django-1.4.md)\r\n-   [Django 1.3](https://github.com/fmierlo/django-default-settings/blob/master/docs/Django-1.3.md)\r\n-   [Django 1.2](https://github.com/fmierlo/django-default-settings/blob/master/docs/Django-1.2.md)\r\n-   [Django 1.1.3](https://github.com/fmierlo/django-default-settings/blob/master/docs/Django-1.1.3.md)\r\n",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
