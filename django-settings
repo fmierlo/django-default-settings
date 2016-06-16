@@ -43,7 +43,7 @@ function init()
 
     if [ "${major}" == "1" ] && [ "${minor}" -le "5" ]
     then
-        diffall="diffsettings-all.py"
+        diffall="django-diffsettings-all.py"
     else
         diffall=""
     fi
