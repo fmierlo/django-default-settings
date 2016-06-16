@@ -1,0 +1,24 @@
+--- release/1.2/default_settings.py	2016-06-16 01:06:21.852211533 -0300
++++ release/1.2/startproject_settings.py	2016-06-16 01:06:21.832211533 -0300
+@@ -20 +20 @@
+-DATABASES = {}
++DATABASES = {'default': {'ENGINE': 'django.db.backends.', 'NAME': '', 'HOST': '', 'USER': '', 'PASSWORD': '', 'PORT': ''}}
+@@ -33 +33 @@
+-DEBUG = False
++DEBUG = True
+@@ -61 +61 @@
+-INSTALLED_APPS = []
++INSTALLED_APPS = ['django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django.contrib.sites', 'django.contrib.messages']
+@@ -80,0 +81 @@
++ROOT_URLCONF = 'project.urls'  ###
+@@ -93 +94 @@
+-SETTINGS_MODULE = 'project.defaults'  ###
++SETTINGS_MODULE = 'project.settings'  ###
+@@ -95,0 +97 @@
++SITE_ID = 1  ###
+@@ -97 +99 @@
+-TEMPLATE_DEBUG = False
++TEMPLATE_DEBUG = True
+@@ -113 +115 @@
+-USE_L10N = False
++USE_L10N = True
