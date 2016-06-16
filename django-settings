@@ -29,7 +29,7 @@ function init()
     defaultsettings="${defaultprefix}_settings.py"
 
     diffdir="diff/${version}"
-    docindex="docs/${version}.md"
+    docindex="docs/Django-${version}.md"
 
     diffdefaultproject="${defaultprefix}_${projectprefix}.diff"
     diffurl="https://github.com/fmierlo/django-default-settings/blob/master"
