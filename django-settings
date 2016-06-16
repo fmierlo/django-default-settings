@@ -140,6 +140,15 @@ function update()
 
     echo "# Django ${version} #" > "${docindex}"
     echo >> "${docindex}"
+    echo "## Source ##">> "${docindex}"
+    echo >> "${docindex}"
+    echo "-   [startproject](${diffurl}/${dir}/${projectsettings})"  >> "${docindex}"
+    echo "-   [default](${diffurl}/${dir}/${defaultsettings})"  >> "${docindex}"
+    echo "-   [app dir](${diffurl}/${dir}/${app})"  >> "${docindex}"
+    echo "-   [project dir](${diffurl}/${dir}/${project})"  >> "${docindex}"
+    echo >> "${docindex}"
+    echo "## Differences ##">> "${docindex}"
+    echo >> "${docindex}"
     echo "| startproject | default | app dir | project dir |" >> "${docindex}"
     echo "| --- | --- | --- | --- |" >> "${docindex}"
 
@@ -148,27 +157,27 @@ function update()
         src_dir="release/${src_version}"
         [ "${version}" == "${src_version}" ] && continue
 
-        defaultdifffile="${diffdir}/${defaultprefix}_${src_version}_${version}.diff"
         projectdifffile="${diffdir}/${projectprefix}_${src_version}_${version}.diff"
-
-        diff -U 0 "${src_dir}/${defaultsettings}" "${dir}/${defaultsettings}" \
-            > "${defaultdifffile}" \
-            || echo "diff: ${defaultdifffile}"
+        defaultdifffile="${diffdir}/${defaultprefix}_${src_version}_${version}.diff"
 
         diff -U 0 "${src_dir}/${projectsettings}" "${dir}/${projectsettings}" \
             > "${projectdifffile}" \
             || echo "diff: ${projectdifffile}"
 
+        diff -U 0 "${src_dir}/${defaultsettings}" "${dir}/${defaultsettings}" \
+            > "${defaultdifffile}" \
+            || echo "diff: ${defaultdifffile}"
+
         appdirdifffile="${diffdir}/${app}_${src_version}_${version}.diff"
         projectdirdifffile="${diffdir}/${project}_${src_version}_${version}.diff"
-
-        diff -Nr -U 0 "${src_dir}/${project}" "${dir}/${project}" \
-            > "${projectdirdifffile}" \
-            || echo "diff: ${projectdirdifffile}"
 
         diff -Nr -U 0 "${src_dir}/${app}" "${dir}/${app}" \
             > "${appdirdifffile}" \
             || echo "diff: ${appdirdifffile}"
+
+        diff -Nr -U 0 "${src_dir}/${project}" "${dir}/${project}" \
+            > "${projectdirdifffile}" \
+            || echo "diff: ${projectdirdifffile}"
 
         echo -n "| [${src_version}](${diffurl}/${projectdifffile}) " >> "${docindex}"
         echo -n "| [${src_version}](${diffurl}/${defaultdifffile}) " >> "${docindex}"
